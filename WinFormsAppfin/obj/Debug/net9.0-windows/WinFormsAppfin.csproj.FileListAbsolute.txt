@@ -1,0 +1,7 @@
+C:\Users\sereb\source\repos\WinFormsAppfin\WinFormsAppfin\obj\Debug\net9.0-windows\WinFormsAppfin.Form1.resources
+C:\Users\sereb\source\repos\WinFormsAppfin\WinFormsAppfin\obj\Debug\net9.0-windows\Form1.resources
+C:\Users\sereb\source\repos\WinFormsAppfin\WinFormsAppfin\obj\Debug\net9.0-windows\WinFormsAppfin.csproj.GenerateResource.cache
+C:\Users\sereb\source\repos\WinFormsAppfin\WinFormsAppfin\obj\Debug\net9.0-windows\WinFormsAppfin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sereb\source\repos\WinFormsAppfin\WinFormsAppfin\obj\Debug\net9.0-windows\WinFormsAppfin.AssemblyInfoInputs.cache
+C:\Users\sereb\source\repos\WinFormsAppfin\WinFormsAppfin\obj\Debug\net9.0-windows\WinFormsAppfin.AssemblyInfo.cs
+C:\Users\sereb\source\repos\WinFormsAppfin\WinFormsAppfin\obj\Debug\net9.0-windows\WinFormsAppfin.csproj.CoreCompileInputs.cache
