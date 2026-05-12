@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neurohub-deployment
+  labels:
+    app: neurohub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: neurohub
+  template:
+    metadata:
+      labels:
+        app: neurohub
+    spec:
+      containers:
+      - name: neurohub-container
+      
+        image: arentumr/neurohub:latest
+        ports:
+        - containerPort: 8080
+      
+        env:
+        - name: UI_SystemBanner
+          value: "NeuroHub: K8s Production"
+        - name: App_BuildVersion
+          value: "v1.0-k8s"
+        - name: Neuro_ApiKey
+          value: "exam-secret-key-connected"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: neurohub-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: neurohub
+  ports:
+  - port: 8080
+    targetPort: 8080

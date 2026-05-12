@@ -1,0 +1,39 @@
+﻿name: Build and Push to Docker Hub
+
+on:
+  push:
+    branches: [ "master", "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: arentumr
+        password: 
+
+    - name: Build and Push Docker Image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./WebApplication9/Dockerfile
+        push: true
+        tags: |
+          arentumr/neurohub:v${{ github.run_number }}
+          arentumr/neurohub:latest
+
+    - name: Send Telegram Notification
+      if: success()
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHAT_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ✅ Збірка NeuroHub №${{ github.run_number }} успішна!
+          🐳 Образ: arentumr/neurohub:v${{ github.run_number }}
+          🔗 Комміт: ${{ github.event.head_commit.message }}
